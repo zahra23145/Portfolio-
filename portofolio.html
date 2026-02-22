@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zahra Zyanka Efendi | UI/UX Designer & Web Developer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #0E1B48;
+      --secondary: #C18DB4;
+      --light-pink: #E2CAD8;
+      --blue: #87A7D0;
+      --dark-blue: #27425D;
+      --darkest: #0E1F2F;
+      --white: #ffffff;
+      --light-gray: #f8f9fa;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--light-gray);
+      color: var(--primary);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--white);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+      padding: 0.5rem 0;
+      position: relative;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--secondary);
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--secondary);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    /* Sections */
+    section {
+      display: none;
+      padding: 4rem 0;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--dark-blue);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .btn-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Home */
+    .hero {
+      text-align: center;
+      padding: 6rem 0;
+      background: linear-gradient(135deg, var(--light-pink) 0%, var(--white) 50%, var(--blue) 100%);
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .hero h2 {
+      font-size: 2.25rem;
+      margin-bottom: 1.5rem;
+      color: var(--darkest);
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: var(--dark-blue);
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .profile-img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .service-card {
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--secondary);
+      background: rgba(193, 141, 180, 0.1);
+    }
+
+    .service-card.blue {
+      border-color: var(--dark-blue);
+      background: rgba(39, 66, 93, 0.1);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .skill-category h3 {
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      padding: 0.25rem 0.75rem;
+      background: var(--light-pink);
+      color: var(--primary);
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    .tag.secondary { background: var(--secondary); color: var(--white); }
+    .tag.blue { background: var(--blue); color: var(--white); }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 1.5rem;
+    }
+
+    .project-content h3 {
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    /* Project Detail */
+    .project-hero {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+
+    .project-screenshots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .screenshot {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: var(--light-pink);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--primary);
+      transition: background 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: var(--secondary);
+      color: var(--white);
+    }
+
+    .social-link i {
+      font-size: 1.25rem;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    /* Back Button */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .back-btn:hover {
+      color: var(--secondary);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hero h1 { font-size: 2.5rem; }
+      .hero h2 { font-size: 1.75rem; }
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-container">
+      <div class="logo">Zahra Zyanka</div>
+      <button class="mobile-menu-btn" id="menuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="#" class="nav-link active" data-page="home">Home</a>
+        <a href="#" class="nav-link" data-page="about">About</a>
+        <a href="#" class="nav-link" data-page="projects">Projects</a>
+        <a href="#" class="nav-link" data-page="contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="active">
+    <div class="hero">
+      <div class="container">
+        <h1>Zahra Zyanka Efendi</h1>
+        <p class="subtitle">UI/UX Designer & Web Developer</p>
+        <h2>Building user-centered digital products since 2023</h2>
+        <p>An Information Systems undergraduate specializing in UI/UX design and web development. I help transform ideas into intuitive, scalable digital products by combining user-centered design with practical technical implementation.</p>
+        <div class="hero-buttons">
+          <a href="#" class="btn btn-primary" id="viewWorkBtn">View My Work</a>
+          <a href="#" class="btn btn-outline" id="contactMeBtn">Contact Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <a href="#" class="back-btn" data-go-back>
+        <i class="fas fa-arrow-left"></i> Back
+      </a>
+      
+      <div class="about-grid">
+        <img src="https://placehold.co/500x600/0E1B48/C18DB4?text=Profile+Photo" alt="Zahra Zyanka" class="profile-img">
+        <div>
+          <h1>About Me</h1>
+          <p style="margin: 1.5rem 0; font-size: 1.1rem;">
+            I am Zahra Zyanka Efendi, a UI/UX designer and web developer who has been actively building digital products since 2023. With a background in Information Systems, I focus on designing interfaces that are not only visually refined but also strategically structured to improve usability, efficiency, and user engagement.
+          </p>
+          <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
+            I approach every project by understanding user needs and business goals, then translating them into clean, functional, and scalable digital solutions. My goal is to help organizations deliver better digital experiences through thoughtful design and well-executed implementation.
+          </p>
+          <a href="#" class="btn btn-icon btn-primary" target="_blank">
+            <i class="fas fa-download"></i> View/Download Resume
+          </a>
+        </div>
+      </div>
+
+      <div class="services">
+        <div class="service-card">
+          <h3>UI/UX Design</h3>
+          <p>I design user-centered interfaces that simplify complex workflows and improve how users interact with digital products. From user flow mapping and wireframing to high-fidelity UI and prototyping, I ensure every design decision supports clarity, usability, and conversion.</p>
+        </div>
+        <div class="service-card blue">
+          <h3>Web Development</h3>
+          <p>I build responsive and functional web applications that bring designs into real-world use. By working with HTML, CSS, JavaScript, PHP, and MySQL, I help ensure that the final product is not only visually consistent with the design but also technically reliable and ready to scale.</p>
+        </div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Hard Skills</h3>
+          <div class="tags">
+            <span class="tag">UI Design</span>
+            <span class="tag">UX Strategy</span>
+            <span class="tag">Wireframing</span>
+            <span class="tag">Prototyping</span>
+            <span class="tag">User Research</span>
+            <span class="tag">Information Architecture</span>
+            <span class="tag">Responsive Design</span>
+            <span class="tag">Frontend Development</span>
+            <span class="tag">HTML/CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Soft Skills</h3>
+          <div class="tags">
+            <span class="tag secondary">Adaptive</span>
+            <span class="tag secondary">Problem Solving</span>
+            <span class="tag secondary">Communication</span>
+            <span class="tag secondary">Collaboration</span>
+            <span class="tag secondary">Time Management</span>
+            <span class="tag secondary">Attention to Detail</span>
+            <span class="tag secondary">Critical Thinking</span>
+            <span class="tag secondary">Empathy</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Tools</h3>
+          <div class="tags">
+            <span class="tag blue">Figma</span>
+            <span class="tag blue">Adobe XD</span>
+            <span class="tag blue">Webflow</span>
+            <span class="tag blue">VS Code</span>
+            <span class="tag blue">GitHub</span>
+            <span class="tag blue">Trello</span>
+            <span class="tag blue">Notion</span>
+            <span class="tag blue">Google Analytics</span>
+            <span class="tag blue">Photoshop</span>
+            <span class="tag blue">Illustrator</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <a href="#" class="back-btn" data-go-back>
+        <i class="fas fa-arrow-left"></i> Back
+      </a>
+      
+      <h1 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem;">My Projects</h1>
+      
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Projects will be inserted by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Detail Section -->
+  <section id="project-detail">
+    <div class="container">
+      <a href="#" class="back-btn" data-go-back>
+        <i class="fas fa-arrow-left"></i> Back
+      </a>
+      
+      <div id="projectDetailContent">
+        <!-- Content will be inserted by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <a href="#" class="back-btn" data-go-back>
+        <i class="fas fa-arrow-left"></i> Back
+      </a>
+      
+      <div class="contact-grid">
+        <div>
+          <h1>Get In Touch</h1>
+          <form id="contactForm" style="margin-top: 2rem;">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+        
+        <div>
+          <h2 style="margin-bottom: 1.5rem;">Connect With Me</h2>
+          <div class="social-links">
+            <a href="#" class="social-link">
+              <i class="fab fa-linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="mailto:zahra@example.com" class="social-link">
+              <i class="fas fa-envelope"></i>
+              <span>Email</span>
+            </a>
+          </div>
+          
+          <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(14, 31, 47, 0.05); border-radius: 8px; border-left: 4px solid var(--darkest);">
+            <h3 style="margin-bottom: 0.5rem;">Let's Work Together</h3>
+            <p>I'm always interested in new opportunities and collaborations. Feel free to reach out if you have a project in mind or just want to say hello!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Zahra Zyanka Efendi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Project data
+    const projects = [
+      {
+        id: 1,
+        title: "Vinix Career",
+        description: "A career platform connecting job seekers with opportunities in the tech industry.",
+        image: "https://placehold.co/800x400/0E1B48/C18DB4?text=Vinix+Career",
+        details: "Vinix Career is a comprehensive career platform designed to bridge the gap between tech professionals and employers. The platform features job listings, skill assessments, and networking opportunities.",
+        link: "#"
+      },
+      {
+        id: 2,
+        title: "Catering Hub",
+        description: "An online catering service platform for corporate and personal events.",
+        image: "https://placehold.co/800x400/C18DB4/E2CAD8?text=Catering+Hub",
+        details: "Catering Hub streamlines the process of ordering catering services for both corporate events and personal celebrations. Users can browse menus, customize orders, and track deliveries in real-time.",
+        link: "#"
+      },
+      {
+        id: 3,
+        title: "Vintagee",
+        description: "An e-commerce platform for vintage clothing and accessories.",
+        image: "https://placehold.co/800x400/E2CAD8/87A7D0?text=Vintagee",
+        details: "Vintagee is a curated marketplace for authentic vintage fashion. The platform combines modern e-commerce functionality with a nostalgic aesthetic to create a unique shopping experience.",
+        link: "#"
+      },
+      {
+        id: 4,
+        title: "PDAM",
+        description: "Digital transformation platform for water utility management.",
+        image: "https://placehold.co/800x400/87A7D0/27425D?text=PDAM",
+        details: "This project involved creating a digital platform for PDAM (water utility company) to manage customer accounts, billing, and service requests more efficiently while improving user experience.",
+        link: "#"
+      },
+      {
+        id: 5,
+        title: "PT. Mayora",
+        description: "Corporate website redesign for Indonesia's leading FMCG company.",
+        image: "https://placehold.co/800x400/27425D/0E1F2F?text=PT.+Mayora",
+        details: "A complete website redesign for PT. Mayora focusing on brand consistency, improved navigation, and enhanced content presentation to better showcase their diverse product portfolio.",
+        link: "#"
+      },
+      {
+        id: 6,
+        title: "HealthConnect",
+        description: "Telemedicine platform connecting patients with healthcare providers.",
+        image: "https://placehold.co/800x400/0E1F2F/C18DB4?text=HealthConnect",
+        details: "HealthConnect enables seamless virtual consultations between patients and medical professionals, featuring appointment scheduling, secure messaging, and prescription management.",
+        link: "#"
+      }
+    ];
+
+    let currentProject = null;
+
+    // DOM Elements
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinksMobile = document.getElementById('navLinks');
+    const viewWorkBtn = document.getElementById('viewWorkBtn');
+    const contactMeBtn = document.getElementById('contactMeBtn');
+    const backButtons = document.querySelectorAll('[data-go-back]');
+    const projectsGrid = document.getElementById('projectsGrid');
+    const projectDetailContent = document.getElementById('projectDetailContent');
+    const contactForm = document.getElementById('contactForm');
+
+    // Show section function
+    function showSection(sectionId) {
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(sectionId).classList.add('active');
+      
+      // Update active nav link
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.dataset.page === sectionId);
+      });
+    }
+
+    // Navigate to page
+    function navigateTo(page) {
+      if (page === 'project-detail') {
+        showSection('project-detail');
+      } else {
+        showSection(page);
+        if (page === 'projects') {
+          renderProjects();
+        }
+      }
+    }
+
+    // Render projects
+    function renderProjects() {
+      projectsGrid.innerHTML = '';
+      projects.forEach(project => {
+        const projectCard = document.createElement('div');
+        projectCard.className = 'project-card';
+        projectCard.innerHTML = `
+          <img src="${project.image}" alt="${project.title}" class="project-img">
+          <div class="project-content">
+            <h3>${project.title}</h3>
+            <p>${project.description}</p>
+          </div>
+        `;
+        projectCard.addEventListener('click', () => {
+          currentProject = project;
+          renderProjectDetail();
+          navigateTo('project-detail');
+        });
+        projectsGrid.appendChild(projectCard);
+      });
+    }
+
+    // Render project detail
+    function renderProjectDetail() {
+      if (!currentProject) return;
+      
+      projectDetailContent.innerHTML = `
+        <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">${currentProject.title}</h1>
+        <img src="${currentProject.image}" alt="${currentProject.title}" class="project-hero">
+        <p style="font-size: 1.1rem; line-height: 1.8;">${currentProject.details}</p>
+        <a href="${currentProject.link}" target="_blank" class="btn btn-icon btn-primary" style="margin-top: 1.5rem;">
+          Visit Project <i class="fas fa-external-link-alt"></i>
+        </a>
+        
+        <div class="project-screenshots">
+          <img src="https://placehold.co/600x400/C18DB4/white?text=Project+Screenshot+1" alt="Screenshot 1" class="screenshot">
+          <img src="https://placehold.co/600x400/87A7D0/white?text=Project+Screenshot+2" alt="Screenshot 2" class="screenshot">
+        </div>
+      `;
+    }
+
+    // Event Listeners
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        navigateTo(link.dataset.page);
+        if (window.innerWidth <= 768) {
+          navLinksMobile.classList.remove('active');
+        }
+      });
+    });
+
+    viewWorkBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      navigateTo('projects');
+    });
+
+    contactMeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      navigateTo('contact');
+    });
+
+    backButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const currentPage = document.querySelector('section.active').id;
+        if (currentPage === 'project-detail') {
+          navigateTo('projects');
+        } else {
+          navigateTo('home');
+        }
+      });
+    });
+
+    menuBtn.addEventListener('click', () => {
+      navLinksMobile.classList.toggle('active');
+    });
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for your message! (In a real app, this would send an email.)');
+      contactForm.reset();
+    });
+
+    // Initialize
+    renderProjects();
+  </script>
+</body>
+</html>
+

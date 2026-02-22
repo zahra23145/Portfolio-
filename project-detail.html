@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vinix Career - Project Detail</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-container">
+      <div class="logo">Zahra Zyanka</div>
+      <button class="mobile-menu-btn" id="menuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link active">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section style="background: linear-gradient(135deg, var(--light-pink) 0%, var(--white) 50%, var(--blue) 100%); padding: 2rem 0;">
+    <div class="container">
+      <a href="javascript:history.back()" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+      </a>
+      
+      <div class="project-hero-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+        <!-- Video Section -->
+        <div class="project-video-container">
+          <div style="position: relative; width: 100%; height: 0; padding-bottom: 62.5%; background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <!-- Laptop frame overlay -->
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;">
+              <div style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 80%; height: 40px; background: var(--white); border-radius: 8px 8px 0 0;"></div>
+              <div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 10px; background: var(--white); border-radius: 4px;"></div>
+            </div>
+            <!-- Video placeholder - ganti dengan video asli -->
+            <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+              <source src="videos/video-vinixcareer.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p style="text-align: center; margin-top: 1rem; color: var(--dark-blue); font-size: 0.9rem;">
+            Interactive demo of Vinix Career platform
+          </p>
+          <br>
+          <br>
+        </div>
+
+        <!-- Project Info Section -->
+        <div class="project-info">
+          <h1 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--primary);">Vinix Career</h1>
+          
+          <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem; color: var(--dark-blue);">
+            Vinix Career is a career management and job portal system designed to support PT Vinix Seven Aurum’s service expansion. The project focuses on helping Vinix7 graduates explore relevant job opportunities through a clear, user-friendly experience, while laying the foundation for internal career data management. The final output was an MVP that validated both the system concept and the user experience.
+          </p>
+          
+          <div class="project-meta" style="margin-bottom: 2rem;">
+            <div style="margin-bottom: 1rem;">
+              <strong style="color: var(--primary); font-weight: 600;">Role:</strong>
+              <span style="color: var(--dark-blue); margin-left: 0.5rem;">UX/UI Designer & Web Developer</span>
+            </div>
+            <div style="margin-bottom: 1rem;">
+              <strong style="color: var(--primary); font-weight: 600;">Project Type:</strong>
+              <span style="color: var(--dark-blue); margin-left: 0.5rem;">Industry Based-Project</span>
+            </div>
+            <div style="margin-bottom: 1rem;">
+              <strong style="color: var(--primary); font-weight: 600;">Tools:</strong>
+              <span style="color: var(--dark-blue); margin-left: 0.5rem;">Figma, HTML, CSS, JavaScript</span>
+            </div>
+            <div>
+              <strong style="color: var(--primary); font-weight: 600;">Duration:</strong>
+              <span style="color: var(--dark-blue); margin-left: 0.5rem;">4 months (Aug 2025 - Dec 2025)</span>
+            </div>
+          </div>
+          
+          <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+            
+            <a href="#project-overview" 
+              target="_blank" 
+              class="btn btn-primary"
+              style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+              <i class="fas fa-file-alt" style="margin-right: 0.4rem;"></i>
+              View Case Study
+            </a>
+
+            <a href="https://www.figma.com/proto/example" 
+              target="_blank" 
+              class="btn btn-secondary"
+              style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+              <i class="fas fa-external-link-alt" style="margin-right: 0.4rem;"></i>
+              View Prototype
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--light-gray); padding: 4rem 0;">
+    <div class="container">
+      <h2 style="font-size: 2.2rem; margin-bottom: 3rem; color: var(--primary); text-align: center;">
+        Project Overview
+      </h2>
+      
+      <div style="max-width: 800px; margin: 0 auto;">
+        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--dark-blue);">The Challenge</h3>
+        <p style="margin-bottom: 2rem; line-height: 1.8; color: var(--dark-blue);">
+          Customers struggled to find reliable catering services that matched their event type, budget, and dietary requirements. Existing platforms lacked visual appeal for food presentation and had complex booking processes that led to high abandonment rates.
+        </p>
+        
+        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--dark-blue);">My Approach</h3>
+        <p style="margin-bottom: 2rem; line-height: 1.8; color: var(--dark-blue);">
+          I worked end-to-end on this project, starting from understanding user and business needs to designing and implementing the first usable version of the system. The focus was not only on visual design, but also on creating a clear flow that supports how users actually look for opportunities.
+        </p>
+        <img src="images/userflow-vinixcareer.png" alt="User Flow Vinix Career" style="width: 80%; height: 40%; border-radius: 8px; margin-bottom: 1rem; margin-left: 5rem;">
+
+        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--dark-blue);">UX Process</h3>
+        <p style="margin-bottom: 2rem; line-height: 1.8; color: var(--dark-blue);">
+          The UX process began by mapping user flows for two roles: talent/graduates and admin. Low-fidelity wireframes were created to define page structure and interaction logic before moving into high-fidelity UI design.
+        </p>
+
+        <div class="slider">
+          <img src="images/LOGIN.png" class="slide active" alt="Slide 1">
+          <img src="images/BERANDA.png" class="slide" alt="Slide 2">
+          <img src="images/FORM DAFTAR.png" class="slide" alt="Slide 3">
+        </div>
+
+        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--dark-blue);">Key Features</h3>
+        <ul style="margin-left: 2rem; margin-bottom: 2rem; line-height: 1.8; color: var(--dark-blue);">
+          <li style="margin-bottom: 0.5rem;">Event-type based menu discovery with visual galleries</li>
+          <li style="margin-bottom: 0.5rem;">Dietary preference filters (halal, vegan, gluten-free, nut-free)</li>
+          <li style="margin-bottom: 0.5rem;">Real-time availability calendar for providers</li>
+          <li style="margin-bottom: 0.5rem;">Integrated booking flow with deposit payment</li>
+          <li style="margin-bottom: 0.5rem;">Post-event feedback system to improve service quality</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Overview section sesuai wireframe -->
+<section style="background-color: var(--white); padding: 2rem 0;">
+  <div class="container">
+    <h2 style="font-size: 2.2rem; margin-bottom: 3rem; color: var(--primary); text-align: center;">
+      Project Overview
+    </h2>
+    
+    <!-- Logo and Description section -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; max-width: 800px; margin: 0 auto;">
+      <div>
+        <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--primary);">Logo</h3>
+        <img src="images/logo-vinixcareer.png" alt="Project Logo" style="width: 200px; height: 200px; border-radius: 8px; margin-bottom: 1rem;">
+      </div>
+      
+      <div>
+        <p style="color: var(--dark-blue); line-height: 1.6; font-size: 1.1rem;">
+          (Penjelasan Logo) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet venenatis ligula, ac posuere elit porta tristique. Pellentesque et gravida velit. In viverra venenatis ligula, ac facilisis quam ultrices eget. Pellentesque lobortis dictum pellentesque. Donec dictum metus at risus venenatis, ac varius dui hendrerit.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Color Palette section -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 800px; margin: 3rem auto 0;">
+      <div>
+        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--primary);">Color Palette</h3>
+        
+        <div style="display: flex; gap: 2rem; align-items: center;">
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 100px; height: 100px; background: #003399; border-radius: 8px; margin-bottom: 1rem;"></div>
+            <span style="color: var(--dark-blue); font-size: 0.9rem;">#003399</span>
+          </div>
+          
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 100px; height: 100px; background: #FFDE59; border-radius: 8px; margin-bottom: 1rem;"></div>
+            <span style="color: var(--dark-blue); font-size: 0.9rem;">#FFDE59</span>
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <p style="color: var(--dark-blue); line-height: 1.6; font-size: 1.1rem;">
+          (Penjelasan Color Palette) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet venenatis ligula, ac posuere elit porta tristique. Pellentesque et gravida velit. In viverra venenatis ligula, ac facilisis quam ultrices eget. Pellentesque lobortis dictum pellentesque. Donec dictum metus at risus venenatis, ac varius dui hendrerit.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section style="background-color: var(--light-gray); padding: 4rem 0;">
+    <div class="container">
+      <h2 style="font-size: 2.2rem; margin-bottom: 3rem; color: var(--primary); text-align: center;">
+        Design Process
+      </h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
+        <div style="background: var(--white); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+          <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--primary);">
+            <i class="fas fa-search" style="margin-right: 0.5rem;"></i> Research
+          </h3>
+          <p style="color: var(--dark-blue); line-height: 1.6;">
+            Conducted user interviews, competitive analysis, and market research to understand user needs and industry trends.
+          </p>
+        </div>
+        
+        <div style="background: var(--white); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+          <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--primary);">
+            <i class="fas fa-brain" style="margin-right: 0.5rem;"></i> Ideation
+          </h3>
+          <p style="color: var(--dark-blue); line-height: 1.6;">
+            Created user personas, journey maps, and wireframes to visualize the user experience and identify key features.
+          </p>
+        </div>
+        
+        <div style="background: var(--white); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+          <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--primary);">
+            <i class="fas fa-paint-brush" style="margin-right: 0.5rem;"></i> Design
+          </h3>
+          <p style="color: var(--dark-blue); line-height: 1.6;">
+            Developed high-fidelity mockups and interactive prototypes, focusing on usability and visual appeal.
+          </p>
+        </div>
+        
+        <div style="background: var(--white); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+          <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--primary);">
+            <i class="fas fa-code" style="margin-right: 0.5rem;"></i> Development
+          </h3>
+          <p style="color: var(--dark-blue); line-height: 1.6;">
+            Implemented responsive front-end development using modern web technologies and best practices.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background-color: var(--blue); padding: 4rem 0; color: var(--white);">
+    <div class="container">
+      <h2 style="font-size: 2.2rem; margin-bottom: 3rem; text-align: center;">
+        Results & Impact
+      </h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto;">
+        <div style="text-align: center; padding: 2rem;">
+          <div style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem;">+45%</div>
+          <p style="font-size: 1.1rem;">User Engagement</p>
+        </div>
+        
+        <div style="text-align: center; padding: 2rem;">
+          <div style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem;">+30%</div>
+          <p style="font-size: 1.1rem;">Conversion Rate</p>
+        </div>
+        
+        <div style="text-align: center; padding: 2rem;">
+          <div style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem;">-60%</div>
+          <p style="font-size: 1.1rem;">Bounce Rate</p>
+        </div>
+      </div>
+      
+      <div style="max-width: 700px; margin: 3rem auto 0; text-align: center; padding: 2rem; background: rgba(255,255,255,0.1); border-radius: 12px;">
+        <p style="font-size: 1.2rem; line-height: 1.8; font-style: italic;">
+          "The new platform has significantly improved our user retention and job placement rates. The intuitive design makes it easy for both job seekers and employers to navigate."
+        </p>
+        <p style="margin-top: 1rem; font-weight: 600;">— Client Testimonial</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Zahra Zyanka Efendi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let currentIndex = 0;
+
+    document.querySelector('.slider').addEventListener('click', () => {
+      slides[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % slides.length;
+      slides[currentIndex].classList.add('active');
+    });
+  </script>
+</body>
+</html>
